@@ -1,10 +1,10 @@
 {
-  "name": "octotree",
+  "name": "octotree-git-dist",
   "title": "Octotree",
   "id": "jid1-Om7eJGwA1U8Akg",
   "description": "Display GitHub code in tree format",
   "author": "Buu Nguyen",
-  "homepage": "https://github.com/buunguyen/octotree",
+  "homepage": "https://github.com/jasonmit/octotree",
   "lib": "data",
   "main": "data/firefox",
   "data": "data",

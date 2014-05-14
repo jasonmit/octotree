@@ -13,7 +13,7 @@ Browser extensions (Chrome, Firefox and Safari) to display GitHub code in tree f
 ![When extension is active](https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome.png)
 
 ## Install on Firefox and Safari
-I'm in the process of submitting the extensions to Mozilla and Safari stores. Meanwhile, you can install the prebuilt extensions located in the [dist](https://github.com/buunguyen/octotree/tree/master/dist) folder.
+I'm in the process of submitting the extensions to Mozilla and Safari stores. Meanwhile, you can install the prebuilt extensions located in the [dist](https://github.com/jasonmit/octotree/tree/master/dist) folder.
 
 * Firefox: drag `octotree.xpi` to the browser and follow the instructions
 * Safari: drag `octotree.safariextz` to the browser and follow the instructions

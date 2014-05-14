@@ -18,7 +18,7 @@
           'notifications'
         ]
       , RESERVED_REPO_NAMES = ['followers', 'following']
-      
+
   var $html    = $('html')
     , $sidebar = $('<nav class="octotree_sidebar">' +
                      '<h1>loading...</h1>' +
@@ -32,7 +32,7 @@
                      '</div>' +
                      '<div>' +
                        '<button type="submit">Save</button>' +
-                       '<a href="https://github.com/buunguyen/octotree#github-api-rate-limit" target="_blank">Why need access token?</a>' +
+                       '<a href="https://github.com/jasonmit/octotree#github-api-rate-limit" target="_blank">Why need access token?</a>' +
                      '</div>' +
                      '<div class="error"></div>' +
                    '</form>')
@@ -61,7 +61,7 @@
   function getRepoFromPath() {
     var match = location.pathname.match(REGEXP)
     if (!match) return false
-     
+
     if (~RESERVED_USER_NAMES.indexOf(match[1])) return false
     if (~RESERVED_REPO_NAMES.indexOf(match[2])) return false
 
@@ -72,8 +72,8 @@
     // if match[3] exists, it must be either 'tree' or 'blob'
     // if (match[3] && !~['tree', 'blob'].indexOf(match[3])) return false
 
-    return { 
-      username : match[1], 
+    return {
+      username : match[1],
       reponame : match[2],
       branch   : $('*[data-master-branch]').data('ref') || 'master'
     }
@@ -85,7 +85,7 @@
       , root    = []
       , folders = { '': root }
 
-    api.getTree(encodeURIComponent(repo.branch) + '?recursive=true', function(err, tree) {
+    api.getTree(encodeURIComponent(repo.branch) + '?recursive=true&access_token=' + store.get(TOKEN), function(err, tree) {
       if (err) return done(err)
       tree.forEach(function(item) {
         var path   = item.path
@@ -163,14 +163,14 @@
       .on('click', function(e) {
         var $target = $(e.target)
         if ($target.is('a.jstree-anchor') && $target.children(':first').hasClass('blob')) {
-          $.pjax({ 
-            url: $target.attr('href'), 
-            container: $('#js-repo-pjax-container') 
+          $.pjax({
+            url: $target.attr('href'),
+            container: $('#js-repo-pjax-container')
           })
         }
       })
       .on('ready.jstree', function() {
-        updateSidebar(repo.username + ' / ' + repo.reponame + ' [' + repo.branch + ']')  
+        updateSidebar(repo.username + ' / ' + repo.reponame + ' [' + repo.branch + ']')
       })
   }
 
@@ -198,7 +198,7 @@
     if (shown) $html.removeClass(PREFIX)
     else $html.addClass(PREFIX)
     store.set(SHOWN, !shown)
-  } 
+  }
 
   function saveToken(event) {
     event.preventDefault()
@@ -211,7 +211,7 @@
     }
     store.set(TOKEN, token)
     loadRepo()
-  }   
+  }
 
   function Storage() {
     this.get = function(key) {

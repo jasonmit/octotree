@@ -2,7 +2,7 @@ var data = require('sdk/self').data
   , pageMod = require('sdk/page-mod')
 
 pageMod.PageMod({
-  include: '*.github.com',
+  include: '*.git.corp.yahoo.com',
   contentScriptFile: [data.url('lib/js/underscore.js'),
                       data.url('lib/js/jquery.js'),
                       data.url('lib/js/jstree.js'),
