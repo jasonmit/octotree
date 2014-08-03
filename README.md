@@ -1,3 +1,5 @@
+# OBSOLETE.  Octotree now has first-class support for git enterprise
+
 ## Octotree
 Browser extensions (Chrome, Firefox and Safari) to display GitHub code in tree format. Useful for developers who frequently read source in GitHub and do not want to download or checkout too many repositories. Features:
 
